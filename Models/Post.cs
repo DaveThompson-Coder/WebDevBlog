@@ -16,7 +16,7 @@ namespace WebDevBlog.Models
         public int Id { get; set; }
         [Display(Name = "Choose a Blog Name")]
         public int BlogId { get; set; }
-        public string AuthorId { get; set; }    //foreign key for the author in the IdentityUser Model
+        public string BlogUserId { get; set; }    //foreign key for the author in the BlogUser/IdentityUser Model
 
         [Required]
         [StringLength(75, ErrorMessage = "The {0} must be at least {2} and no more than {1} characters long.", MinimumLength = 2)]
@@ -48,7 +48,7 @@ namespace WebDevBlog.Models
 
         //Navigation properties
         public virtual Blog Blog { get; set; }
-        public virtual BlogUser Author { get; set; }
+        public virtual BlogUser BlogUser { get; set; }
 
         public virtual ICollection<Tag> Tags { get; set; } = new HashSet<Tag>();
         public virtual ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();

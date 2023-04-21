@@ -14,7 +14,7 @@ namespace WebDevBlog.Models
     {
         //id keys data properties
         public int Id { get; set; }                //primary key for this Model 'Blog' 
-        public string AuthorId { get; set; }     //foreign key for the author in the IdentityUser Model
+        public string BlogUserId { get; set; }     //foreign key for the author in the IdentityUser Model
 
         //blog post details data properties
         [Required]
@@ -45,7 +45,7 @@ namespace WebDevBlog.Models
 
         //Navigation properties
         [Display(Name = "Author")]
-        public virtual BlogUser Author { get; set; }
+        public virtual BlogUser BlogUser { get; set; }
         public virtual ICollection<Post> Posts { get; set; } = new HashSet<Post>();
 
     }
